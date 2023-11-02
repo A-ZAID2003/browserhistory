@@ -100,9 +100,8 @@ class SearchHistory extends Component {
 
   render() {
     const {searchInput} = this.state
-    const {initialHistoryList} = this.props
-    const searchResults = initialHistoryList.filter(eachItem =>
-      eachItem.id.toLowerCase().includes(searchInput.toLowerCase()),
+    const searchResults = historyList.filter(eachItem =>
+      eachItem.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
 
     return (
