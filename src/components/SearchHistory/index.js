@@ -127,15 +127,19 @@ class SearchHistory extends Component {
           </div>
         </div>
 
-        <ul>
-          {searchResults.map(eachItem => (
-            <HistoryItem
-              key={eachItem.id}
-              historyDetails={eachItem}
-              updateSearchHistory={this.updateSearchHistory}
-            />
-          ))}
-        </ul>
+        {searchResults.length === 0 ? (
+          <p>There is no history to show</p>
+        ) : (
+          <ul>
+            {searchResults.map(eachItem => (
+              <HistoryItem
+                key={eachItem.id}
+                historyDetails={eachItem}
+                updateSearchHistory={this.updateSearchHistory}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     )
   }
